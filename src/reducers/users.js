@@ -1,26 +1,26 @@
-import initialState from '../initial-states/users'
+import initialState from '../initial-states/tickets'
 import {
-    GET_USERS_PENDING,
-    GET_USERS_FULLFILED,
-    GET_USERS_REJECTED,
-    ADD_USER_PENDING,
-    ADD_USER_FULLFILED,
-    ADD_USER_REJECTED,
-    DELETE_USER
+    GET_TICKETS_PENDING,
+    GET_TICKETS_FULLFILED,
+    GET_TICKETS_REJECTED,
+    ADD_TICKET_PENDING,
+    ADD_TICKET_FULLFILED,
+    ADD_TICKET_REJECTED,
+    DELETE_TICKET
 }
-    from '../actions/users'
+    from '../actions/tickets'
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case GET_USERS_PENDING:
+        case GET_TICKETS_PENDING:
             return {
                 ...state,
                 error: '',
                 isLoading: true
             }
 
-        case GET_USERS_FULLFILED:
+        case GET_TICKETS_FULLFILED:
             return {
                 ...state,
                 error: '',
@@ -28,21 +28,21 @@ const reducer = (state = initialState, action) => {
                 list: action.list
             }
 
-        case GET_USERS_REJECTED:
+        case GET_TICKETS_REJECTED:
             return {
                 ...state,
                 isLoading: false,
                 error: action.error
             }
 
-        case ADD_USER_PENDING:
+        case ADD_TICKET_PENDING:
             return {
                 ...state,
                 error: '',
                 isLoading: true
             }
 
-        case ADD_USER_FULLFILED: {
+        case ADD_TICKET_FULLFILED: {
             console.log(action)
             return {
                 ...state,
@@ -55,7 +55,7 @@ const reducer = (state = initialState, action) => {
             }
         }
 
-        case ADD_USER_REJECTED:{
+        case ADD_TICKET_REJECTED:{
             return{
                 ...state,
                 isLoading: false,
@@ -63,11 +63,11 @@ const reducer = (state = initialState, action) => {
             }
         }
 
-        case DELETE_USER:
+        case DELETE_TICKET:
             return {
                 ...state,
                 list: state.list.filter(
-                    item => item.id !== action.userId
+                    item => item.id !== action.ticketId
                 )
             }
 

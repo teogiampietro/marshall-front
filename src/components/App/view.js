@@ -13,19 +13,19 @@ const App = props => {
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                 <a class="nav-link" href="#"><Link to="/access">Entrar</Link> <span class="sr-only">(current)</span></a>
+                 <a class="nav-link" ><Link to="/access">Entrar</Link> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><Link to="/register">Registrarse</Link></a>
+                  <a class="nav-link" ><Link to="/register">Registrarse</Link></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><Link to="/recover">Recuperar cuenta</Link></a>
+                  <a class="nav-link" ><Link to="/recover">Recuperar cuenta</Link></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><Link to="/tickets">Tickets</Link></a>
+                  <a class="nav-link" ><Link to="/tickets">Tickets</Link></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><Link to="/products">Help</Link></a>
+                  <a class="nav-link" ><Link to="/products">Help</Link></a>
                 </li>
               </ul>
               <span class="navbar-text" > Marshall Servers </span>

@@ -15,11 +15,11 @@ class ProductList extends Component {
   }
 
   changeName = evt => {
-    this.setState({name: evt.target.value})
+    this.setState({ name: evt.target.value })
   }
 
   changePrice = evt => {
-    this.setState({price: evt.target.value})
+    this.setState({ price: evt.target.value })
   }
 
   handleSubmit = evt => {
@@ -33,7 +33,7 @@ class ProductList extends Component {
     const { products } = this.props
     return products.map(item => (
       <div key={item.id}>
-        {item.name +' $'+ item.price}
+        {item.name + ' $' + item.price}
       </div>
     ))
   }
@@ -42,7 +42,7 @@ class ProductList extends Component {
     return (
       <div>
         <h1>Showing Products</h1>
-        { this.getProductList() }
+        {this.getProductList()}
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
