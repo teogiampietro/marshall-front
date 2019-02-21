@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import products from './products'
-import users from './users'
+import tickets from './tickets'
 import pages from './pages'
 
 const rootReducer = combineReducers({
   products,
-  users,
+  tickets,
   pages
 })
 

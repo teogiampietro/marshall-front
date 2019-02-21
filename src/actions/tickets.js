@@ -10,24 +10,24 @@ export const ADD_TICKET_REJECTED = 'ADD_TICKET_REJECTED'
 export const DELETE_TICKET = 'DELETE_TICKET'
 
 export const getTicketsThunk = () => dispatch => {
-dispatch({
-    type: GET_TICKETS_PENDING
-})
-get('/tickets')
-.then(list => {
-    console.log("List : ", list);
     dispatch({
-        type: GET_TICKETS_FULLFILED,
-        list,
+        type: GET_TICKETS_PENDING
     })
-})
-.catch(err => {
-    console.log("err: ", err);
-    dispatch({
-        type: GET_TICKETS_REJECTED,
-        err
-    })
-})
+    get('/tickets')
+        .then(list => {
+            console.log("List : ", list);
+            dispatch({
+                type: GET_TICKETS_FULLFILED,
+                list,
+            })
+        })
+        .catch(err => {
+            console.log("err: ", err);
+            dispatch({
+                type: GET_TICKETS_REJECTED,
+                err
+            })
+        })
 }
 
 export const addTicketThunk = item => dispatch => {
@@ -35,18 +35,18 @@ export const addTicketThunk = item => dispatch => {
         type: ADD_TICKET_PENDING,
     })
     post('/tickets', item)
-    .then(() => {
-        dispatch({
-            type: ADD_TICKET_FULLFILED,
-            ticket: item
+        .then(() => {
+            dispatch({
+                type: ADD_TICKET_FULLFILED,
+                ticket: item
+            })
         })
-    })
-    .catch(err => {
-        dispatch({
-            type: ADD_TICKET_REJECTED,
-            errorMsg: 'No se pudo agregar el item'
+        .catch(err => {
+            dispatch({
+                type: ADD_TICKET_REJECTED,
+                errorMsg: 'No se pudo agregar el item'
+            })
         })
-    })
 }
 
 export const deleteTicket = id => ({

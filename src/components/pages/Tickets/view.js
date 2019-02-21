@@ -1,10 +1,10 @@
 import React from 'react'
-import TicketList from './TicketList/view';
+import TicketList from './TicketList';
 
 const Tickets = () => {
     return (
         <div>
-            <TicketList/>
+            <TicketList />
         </div>
     )
 }
