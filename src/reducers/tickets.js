@@ -8,7 +8,7 @@ import {
     ADD_TICKET_REJECTED,
     DELETE_TICKET
 }
-    from '../actions/tickets'
+from '../actions/tickets'
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
