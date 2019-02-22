@@ -7,8 +7,7 @@ import {
     ADD_TICKET_FULLFILED,
     ADD_TICKET_REJECTED,
     DELETE_TICKET
-}
-from '../actions/tickets'
+} from '../actions/tickets'
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -32,7 +31,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                error: action.error
+                error: action.err
             }
 
         case ADD_TICKET_PENDING:
@@ -50,13 +49,13 @@ const reducer = (state = initialState, action) => {
                 isLoading: false,
                 list: [
                     ...state.list,
-                    action.product
+                    action.ticket
                 ]
             }
         }
 
-        case ADD_TICKET_REJECTED:{
-            return{
+        case ADD_TICKET_REJECTED: {
+            return {
                 ...state,
                 isLoading: false,
                 error: action.errorMsg
