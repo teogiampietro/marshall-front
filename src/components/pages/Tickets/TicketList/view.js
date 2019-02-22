@@ -72,7 +72,7 @@ class TicketList extends Component {
                                 <input type="text" ref={this.nameInput} onChange={this.changeName} className="form-control" placeholder="Mensaje" />
                             </div>
                             <div className="form-row col-2 ">
-                                <input className="form-control btn btn-dark btn-block" type="submit" value="Add" />
+                                <input className="form-control btn btn-dark btn-block" type="submit" value="Agregar" />
                             </div>
                         </div>
 

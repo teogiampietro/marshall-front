@@ -13,9 +13,9 @@ const App = props => {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                 <a className="nav-link" ><Link to="/access">Entrar</Link> <span className="sr-only">(current)</span></a>
+                 <a className="nav-link " ><Link to="/access">Entrar</Link> <span className="sr-only">(current)</span></a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item ">
                   <a className="nav-link" ><Link to="/register">Registrarse</Link></a>
                 </li>
                 <li className="nav-item">
@@ -25,10 +25,10 @@ const App = props => {
                   <a className="nav-link" ><Link to="/tickets">Tickets</Link></a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" ><Link to="/products">Help</Link></a>
+                  <a className="nav-link" ><Link to="/products">Ayuda</Link></a>
                 </li>
               </ul>
-              <span className="navbar-text" > Marshall Servers </span>
+              <span className="navbar-text navbar-brand text-light " > Marshall Servers </span>
             </div>
         </nav>
       {props.children}
