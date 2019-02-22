@@ -33,23 +33,27 @@ class TicketList extends Component {
     getTicketList = () => {
         const { tickets } = this.props
         return tickets.map(item => (
-            <div className="row" key={item.id}>
-                <div className="col-sm-4">
-                    {item.message + ' / ' + item.priority}
-                </div>
-            </div>
+            <tbody className="table-striped">
+                <tr>
+                    <th scope="row" >
+                        {item.message}
+                    </th>
+                    <th>
+                        {item.priority}
+                    </th>
+                </tr>
+            </tbody>
         ))
-
     }
     render() {
         return (
-            <div >
-                <div id="centerWidth" >
-                    <form>
-                        <div className="form-row">
-                            <div className="dropdown">
+            <div className="container mt-4" >
+                <div className="col-12" >
+                    <form >
+                        <div class="form-row">
+                            <div className="dropdown col-2">
                                 <button
-                                    className="btn btn-secondary dropdown-toggle"
+                                    className="form-control btn btn-dark dropdown-toggle btn-block"
                                     type="button" ref={this.priorityInput}
                                     onChange={this.changePriority}
                                     id="dropdownMenu2"
@@ -57,21 +61,33 @@ class TicketList extends Component {
                                     aria-haspopup="true"
                                     aria-expanded="false">
                                     Prioridad
-                        </button>
+                                </button>
                                 <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <button className="dropdown-item" type="button">Baja</button>
                                     <button className="dropdown-item" type="button">Media</button>
                                     <button className="dropdown-item" type="button">Alta</button>
                                 </div>
                             </div>
-                            <div className="col">
+                            <div className=" form-row col-8 ">
                                 <input type="text" ref={this.nameInput} onChange={this.changeName} className="form-control" placeholder="Mensaje" />
                             </div>
-
+                            <div className="form-row col-2 ">
+                                <input className="form-control btn btn-dark btn-block" type="submit" value="Add" />
+                            </div>
                         </div>
+
                     </form>
                 </div>
-                {this.getTicketList()}
+                <table class="table mt-4 table-bordered">
+                    <thead className="thead-dark">
+                        <tr>
+                            <th scope="col">Mensaje de error</th>
+                            <th scope="col">Prioridad</th>
+                        </tr>
+                    </thead>
+                    {this.getTicketList()}
+                </table>
+
             </div>
 
         )
