@@ -6,7 +6,7 @@ class TicketList extends Component {
     constructor(props) {
         super(props);
         this.state = { message: '', priority: '' }
-        this.nameInput = React.createRef();
+        this.messageInput = React.createRef();
         this.priorityInput = React.createRef();
 
     }
@@ -15,7 +15,7 @@ class TicketList extends Component {
         this.props.getTickets();
     }
 
-    changeName = evt => {
+    changeMessage = evt => {
         this.setState({ message: evt.target.value })
     }
 
@@ -24,10 +24,11 @@ class TicketList extends Component {
     }
 
     handleSubmit = evt => {
+        console.log("asd");
         evt.preventDefault();
         const { addTicket } = this.props
-        const { name, priority } = this.state
-        addTicket({ name, priority })
+        const { message, priority } = this.state
+        addTicket({ message, priority })
     }
 
     getTicketList = () => {
@@ -69,10 +70,10 @@ class TicketList extends Component {
                                 </div>
                             </div>
                             <div className=" form-row col-8 ">
-                                <input type="text" ref={this.nameInput} onChange={this.changeName} className="form-control" placeholder="Mensaje" />
+                                <input type="text" ref={this.messageInput} onChange={this.changeMessage} className="form-control" placeholder="Mensaje" />
                             </div>
                             <div className="form-row col-2 ">
-                                <input className="form-control btn btn-dark btn-block" type="submit" value="Agregar" />
+                                <input className="form-control btn btn-dark btn-block" type="submit" value="Agregar"/>
                             </div>
                         </div>
 
