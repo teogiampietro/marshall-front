@@ -8,7 +8,6 @@ class TicketList extends Component {
         this.state = { message: '', priority: '' }
         this.messageInput = React.createRef();
         this.priorityInput = React.createRef();
-
     }
 
     componentWillMount() {
@@ -16,15 +15,15 @@ class TicketList extends Component {
     }
 
     changeMessage = evt => {
-        this.setState({ message: evt.target.value })
+        this.setState({ message: this.messageInput.current.value })
     }
 
     changePriority = evt => {
-        this.setState({ priority: evt.target.value })
+        evt.preventDefault()
+        this.setState({priority:evt.target.id})
     }
 
     handleSubmit = evt => {
-        console.log("asd");
         evt.preventDefault();
         const { addTicket } = this.props
         const { message, priority } = this.state
@@ -45,32 +44,31 @@ class TicketList extends Component {
                 </tr>
             </tbody>
         ))
-    }
+    }   
     render() {
         return (
             <div className="container mt-4" >
                 <div className="col-12" >
-                    <form >
+                    <form onSubmit= {this.handleSubmit}>
                         <div class="form-row">
                             <div className="dropdown col-2">
                                 <button
                                     className="form-control btn btn-dark dropdown-toggle btn-block"
-                                    type="button" ref={this.priorityInput}
-                                    onChange={this.changePriority}
+                                    type="button"
                                     id="dropdownMenu2"
                                     data-toggle="dropdown"
                                     aria-haspopup="true"
                                     aria-expanded="false">
                                     Prioridad
                                 </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button className="dropdown-item" type="button">Baja</button>
-                                    <button className="dropdown-item" type="button">Media</button>
-                                    <button className="dropdown-item" type="button">Alta</button>
+                                <div ref={this.priorityInput} className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button className="dropdown-item" type="button" value= "Baja" id="Baja" onClick= {this.changePriority}> Baja</button>
+                                    <button className="dropdown-item" type="button" value= "Media" id="Media" onClick= {this.changePriority} > Media</button>
+                                    <button className="dropdown-item" type="button" value= "Alta" id="Alta" onClick= {this.changePriority} > Alta</button>
                                 </div>
                             </div>
                             <div className=" form-row col-8 ">
-                                <input type="text" ref={this.messageInput} onChange={this.changeMessage} className="form-control" placeholder="Mensaje" />
+                                <input type="text" ref={this.messageInput} onChange={this.changeMessage}   />
                             </div>
                             <div className="form-row col-2 ">
                                 <input className="form-control btn btn-dark btn-block" type="submit" value="Agregar"/>
