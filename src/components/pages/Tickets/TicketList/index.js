@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import TicketList from './view'
-import { addTicketThunk, getTicketsThunk } from '../../../../actions/tickets'
+import { addTicketThunk, getTicketsThunk, deleteTicket } from '../../../../actions/tickets'
 
 const mapStateToProps = state => ({
     tickets: state.tickets.list,
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     addTicket: item => { dispatch(addTicketThunk(item)) },
-    getTickets: () => { dispatch(getTicketsThunk()) }
+    getTickets: () => { dispatch(getTicketsThunk()) },
+    deleteTicket: id => {dispatch(deleteTicket(id))}
 })
 
 export default connect(

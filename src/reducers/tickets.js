@@ -42,7 +42,6 @@ const reducer = (state = initialState, action) => {
             }
 
         case ADD_TICKET_FULLFILED: {
-            console.log(action)
             return {
                 ...state,
                 error: '',
@@ -58,7 +57,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                error: action.errorMsg
+                error: action.err
             }
         }
 

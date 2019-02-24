@@ -13,7 +13,7 @@ const App = props => {
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                 <a className="nav-link " ><Link to="/access">Entrar</Link> <span className="sr-only">(current)</span></a>
+                 <a className="nav-link" > <Link to="/access">Entrar</Link><span className="sr-only"></span></a>
                 </li>
                 <li className="nav-item ">
                   <a className="nav-link" ><Link to="/register">Registrarse</Link></a>
